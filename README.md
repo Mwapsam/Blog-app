@@ -1,16 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# OOP school library
+# Blog app
 
-> This project consists of Ruby script for the school library app. I implemented encapsulation and inheritance with Ruby by creating classes to represent students and teachers in the school.
-## Class Diagram
-> ![](./img/uml_class_diagram.png)
+> The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
+# How to build the Blog app
+The end result should follow the following data model (this is an Entity Relationship Diagram that you are already familiar with):
+
+> ![](./app/assets/images/blog_app_erd.png)
 
 
 
 ## Built With
 
+- Ruby on Rails
+- Tailwind CSS
 - Ruby
 - Bubocop
 
@@ -21,11 +25,12 @@
 
 ### Prerequisites
 - Ruby should be installed on your machine
+- Install Ruby on Rails and PostgresQL
 
 ### Setup
 ```
-git clone https://github.com/Mwapsam/OOP-school-library.git
-cd OOP-school-library
+git clone https://github.com/Mwapsam/Blog-app.git
+cd Blog-app
 ```
 ### Install
 ```
@@ -34,7 +39,7 @@ bundle install
 
 ### Play with the code
 ```
-irb
+rails c
 ```
 
 ### Run linters
@@ -42,7 +47,12 @@ irb
 rubocop -a
 
 ```
-ruby app.rb
+rails s
+```
+
+### Tests
+```
+rspec spec
 ```
 
 ## 👤Author
