@@ -1,24 +1,81 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog app
 
-Things you may want to cover:
+> The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-* Ruby version
+# How to build the Blog app
+The end result should follow the following data model (this is an Entity Relationship Diagram that you are already familiar with):
 
-* System dependencies
+> ![](./app/assets/images/blog_app_erd.png)
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+## Built With
 
-* How to run the test suite
+- Ruby on Rails
+- Tailwind CSS
+- Ruby
+- Bubocop
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Getting Started
 
-* ...
+**To get a local copy up and running follow these simple example steps.**
+
+### Prerequisites
+- Ruby should be installed on your machine
+- Install Ruby on Rails and PostgresQL
+
+### Setup
+```
+git clone https://github.com/Mwapsam/Blog-app.git
+cd Blog-app
+```
+### Install
+```
+bundle install
+```
+
+### Play with the code
+```
+rails c
+```
+
+### Run linters
+```
+rubocop -a
+
+```
+rails s
+```
+
+### Tests
+```
+rspec spec
+```
+
+## 👤Author
+
+- GitHub: [@mwapsam](https://github.com/Mwapsam)
+- Twitter: [@mwapesamuel4](https://twitter.com/mwapesamuel4)
+- LinkedIn: [mwapsam](https://www.linkedin.com/in/mwapsam/)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Many thanks to Microverse
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
