@@ -53,13 +53,5 @@ Lint/RaiseException:
 Lint/StructNewOverride:
   Enabled: false
 Style/HashEachMethods:
-  Enabled: false
-Style/HashTransformKeys:
-  Enabled: false
-Style/HashTransformValues:
-  Enabled: false
-Layout/EndOfLine:
-   Enabled: False
-Style/FrozenStringLiteralComment:
-  Enabled: false
+  Enabled:
   

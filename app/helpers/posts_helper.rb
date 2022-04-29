@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-# Posts helper methods
+# rubocop:disable Style/Documentation
 module PostsHelper
 end
