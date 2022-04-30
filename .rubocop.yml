@@ -58,6 +58,11 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
+<<<<<<< HEAD
 Layout/EndOfLine:
    Enabled: False
   
+=======
+Style/FrozenStringLiteralComment:
+  Enabled: false
+>>>>>>> controllers-specs

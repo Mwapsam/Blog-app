@@ -55,7 +55,7 @@ rails s
 rspec spec
 ```
 
-## 👤Author
+## 👤Mwape
 
 - GitHub: [@mwapsam](https://github.com/Mwapsam)
 - Twitter: [@mwapesamuel4](https://twitter.com/mwapesamuel4)
