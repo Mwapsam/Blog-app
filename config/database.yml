@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: blog-rails
-  pool: 5
-  host: localhost
-  username: postgres
-  password: root
-=======
 # PostgreSQL. Versions 9.3 and up are supported.
 #
 # Install the pg driver:
@@ -63,25 +53,12 @@ development:
   #   log, notice, warning, error, fatal, and panic
   # Defaults to warning.
   #min_messages: notice
->>>>>>> controllers-specs
 
 test:
-<<<<<<< HEAD
-  adapter: postgresql
-  encoding: unicode
-  database: blog-rails
-  pool: 5
-  username: postgres
-  password: root
-
-staging:
-  url: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-=======
   <<: *default
   database: blog-rails
   username: postgres
   password: root
->>>>>>> controllers-specs
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -104,11 +81,7 @@ staging:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-<<<<<<< HEAD
-  url: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %> 
-=======
   <<: *default
   database: blog-rails
   username: postgres
   password: root
->>>>>>> controllers-specs
