@@ -1,1 +1,19 @@
-<h1>Here is list of all posts for one user</h1>
+<div class="post-details">
+   <%= image_tag("profile.jpg", :alt => "User icon", width:'100px', height:'100px') %>
+   <h1><%= @post.title %></h1>
+   <p>
+   <p><%= @post.text %></p>
+   <strong>Likes: </strong><%= @post.likes.count %><br />
+   <strong>Comments: </strong><%= @post.comments.count %><br />
+</p>
+</div>
+
+<div class="comments">
+   <% @post.comments.each do |comment| %>
+   <div class="comment">
+      <p><%= comment.text %></p>
+   </div>
+   <% end %>
+</div>
+
+<%= link_to 'Back', {:action => 'index'} %>

@@ -1,1 +1,18 @@
-<h1>Here is list of posts</h1>
+<div class="posts">
+    <%= image_tag("profile.jpg", :alt => "User icon", width:'100px', height:'100px') %>
+    <% @posts.each do |post| %>
+        <div class="post-list-item">
+            <li><%= link_to post.title, {:action => 'show', :id => post.id}%></li>
+            <p><%= post.text %></p>
+            <h3>Comment <%= post.comments.count%>,  <span>Likes <%= post.likes.count%></span></h3>
+        </div>
+    <div class="comments">
+        <% post.comments.each do |comment| %>
+            <div class="comment">
+                <p><%= comment.text %></p>
+            </div>
+        <% end %>
+    <% end %>
+
+    </div>
+</div>
