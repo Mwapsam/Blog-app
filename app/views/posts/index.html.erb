@@ -7,7 +7,7 @@
             <h3>Comment <%= post.comments.count%>,  <span>Likes <%= post.likes.count%></span></h3>
         </div>
     <div class="comments">
-        <% post.comments.each do |comment| %>
+        <% post.recent_comments.each do |comment| %>
             <div class="comment">
                 <p><%= comment.text %></p>
             </div>
