@@ -1,17 +1,29 @@
 <div class="posts">
-    <%= image_tag("profile.jpg", :alt => "User icon", width:'100px', height:'100px') %>
+    <div class="user">
+      <a class="link-to-user" href="/users/<%= @user.id %>"><%= @user.name %></a>
+      <h4 class="posts-count">Posts(<%= @user.posts.size %>)</h4>
+        <% if @user && @user.id == @user.id%>
+     <%= link_to "New post", new_user_post_path(@user.id) %>
+    <% end %>
+    </div>
+    <div class="carousel">
+        <%= image_tag("profile-placeholder.png", :alt => "User icon", class: "placeholder") %>
+    </div>
+</div>
+    <%= link_to "All Users", root_path, class: "all-users-link" %>
+<div class="card"> 
+    <div class="card-body">
     <% @posts.each do |post| %>
-        <div class="post-list-item">
             <li><%= link_to post.title, {:action => 'show', :id => post.id}%></li>
             <p><%= post.text %></p>
             <h3>Comment <%= post.comments.count%>,  <span>Likes <%= post.likes.count%></span></h3>
-        </div>
-    <div class="comments">
-        <% post.recent_comments.each do |comment| %>
-            <div class="comment">
-                <p><%= comment.text %></p>
-            </div>
+            <div class="comments">
+            <% post.recent_comments.each do |comment| %>
+                <div class="comment">
+                    <p><%= comment.text %></p>
+                </div>
+            <% end %>
+             </div>
         <% end %>
-    <% end %>
-    </div>
+        </div> 
 </div>
