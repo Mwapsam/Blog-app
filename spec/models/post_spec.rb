@@ -38,5 +38,9 @@ RSpec.describe Post, type: :model do
       @post.comments_counter = 8
       expect(@post).to be_valid
     end
+
+    it 'recent comments' do
+      expect(@post.recent_comments).to be_a(ActiveRecord::Relation)
+    end
   end
 end

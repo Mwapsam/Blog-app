@@ -1,18 +1,21 @@
 
-<section class="users">
+<section class="posts">
     <% if @users.blank? %>
         <p>There are not any posts currently in the system.</p>
     <% else %>
-    <ul>
+    <div class="card" style="width: 30rem;">
+    <h5 class="card-header">USERS</h5>
         <% @users.each do |user| %>
+        <div class="card-body">
             <li class="user-list">
             <div class="user-details">
                 <%= image_tag("profile.jpg", :alt => "User icon") %>
                 <%= link_to user.name, user_path(user.id) %>
                 <p>Number of posts: <span><%= user.posts.count %></span></p>
             </div>
-            </li>
+           </li>
+        </div>
         <% end %>
-    </ul>
+    </div>
     <% end %>
 </section>
