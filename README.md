@@ -42,6 +42,12 @@ bundle install
 rails c
 ```
 
+### Populate the db with dummy data
+```
+rake db:migrate
+rake db:seed
+```
+
 ### Run linters
 ```
 rubocop -a

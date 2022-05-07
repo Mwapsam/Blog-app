@@ -39,8 +39,18 @@ RSpec.describe Post, type: :model do
       expect(@post).to be_valid
     end
 
-    it 'recent comments' do
-      expect(@post.recent_comments).to be_a(ActiveRecord::Relation)
+    it 'should return recent comments' do
+      @post.comments.create(text: 'test', author: @user)
+      expect(@post.recent_comments.first.text).to eq('test')
+    end
+
+    it 'should return recent comments' do
+      @post.comments.create(text: 'testing', author: @user)
+      @post.comments.create(text: 'testing1', author: @user)
+      @post.comments.create(text: 'testing2', author: @user)
+      @post.comments.create(text: 'testing3', author: @user)
+      @post.comments.create(text: 'testing4', author: @user)
+      expect(@post.recent_comments.length).to eq(5)
     end
   end
 end
