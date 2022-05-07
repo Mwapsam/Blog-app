@@ -22,5 +22,19 @@ RSpec.describe User, type: :model do
       @user.posts_counter = 7
       expect(@user).to be_valid
     end
+
+    it 'should return recent comments' do
+      user = User.create(name: 'John', bio: 'Teacher from Dubai', posts_counter: 0)
+      Post.create(author: user, title: 'Test', text: 'testing', likes_counter: 7, comments_counter: 5)
+      expect(user.recent_posts.first.title).to eq('Test')
+    end
+
+    it 'should return recent comments' do
+      user = User.create(name: 'John', bio: 'Teacher from Dubai', posts_counter: 0)
+      Post.create(author: user, title: 'Test', text: 'testing', likes_counter: 7, comments_counter: 5)
+      Post.create(author: user, title: 'Test1', text: 'testing1', likes_counter: 7, comments_counter: 5)
+      Post.create(author: user, title: 'Test2', text: 'testing2', likes_counter: 7, comments_counter: 5)
+      expect(user.recent_posts.length).to eq(3)
+    end
   end
 end
