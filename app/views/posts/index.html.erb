@@ -10,7 +10,7 @@
         <%= image_tag("profile-placeholder.png", :alt => "User icon", class: "placeholder") %>
     </div>
 </div>
-    <%= link_to "All Users", root_path, class: "all-users-link" %>
+ 
 <div class="card"> 
     <div class="card-body">
     <% @posts.each do |post| %>
@@ -26,4 +26,5 @@
              </div>
         <% end %>
         </div> 
+           <%= link_to "All Users", root_path, class: "all-users-link" %>
 </div>
