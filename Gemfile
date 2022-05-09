@@ -15,6 +15,12 @@ gem 'sprockets-rails'
 # gem "sqlite3", "~> 1.4"
 gem 'pg'
 
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-sass', '~> 4.7.0'
+
+gem 'sass-rails'
+gem 'devise'
+
 gem 'ffi'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'

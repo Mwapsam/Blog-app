@@ -1,19 +1,21 @@
-
+<%= render 'navbar'%>
 <section class="posts">
     <% if @users.blank? %>
-        <p>There are not any posts currently in the system.</p>
+        <p>There are no users currently in the system.</p>
     <% else %>
-    <div class="card" style="width: 30rem;">
+    <div class="card">
     <h5 class="card-header">USERS</h5>
         <% @users.each do |user| %>
         <div class="card-body">
-            <li class="user-list">
-            <div class="user-details">
-                <%= image_tag("profile.jpg", :alt => "User icon") %>
+            <div class="row">
+                <div class="col rounded float-start">
+                <%= image_tag("profile.jpg", :alt => "User icon")%>
+                </div>
+                <div class="col">
                 <%= link_to user.name, user_path(user.id) %>
-                <p>Number of posts: <span><%= user.posts.count %></span></p>
+                </div>
+                <p class="col">Number of posts: <span><%= user.posts.count %></span></p>
             </div>
-           </li>
         </div>
         <% end %>
     </div>

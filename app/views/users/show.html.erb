@@ -1,25 +1,17 @@
-<div class="user-profile">
-  <div class="user-details">
-      <div class="user-profile-image">
-          <%= image_tag("profile.jpg", :alt => "User icon", width:'100px', height:'100px') %>
-      </div>
-      <div class="user-profile-details">
-          <h1><%= @user.name %></h1>
-          <p>Number of posts: <span><%= @user.posts.count %></span></p>
-      </div>
+<%= render 'navbar'%>
+<div class="posts">
+    <div class="user">
+      <div class="col-md-2 img-thumbnail">
+        <%= image_tag("profile-placeholder.png", :alt => "User icon") %>
+       </div>
+    <blockquote class="blockquote mb-0">
+      <%= @user.name %>
+      <p><%= @user.bio%></p>
+      <footer class="blockquote-footer"><cite title="Source Title">Wrote <%= @user.posts.count %> posts</cite></footer>
+      <%= link_to "All posts", user_posts_path(@user), class: "btn btn-primary" %>
+    </blockquote>
+  
   </div>
-  <% if @user.recent_posts.blank? %>
-      <p><%= @user.name %> does not have any posts currently.</p>
-  <% else %>
-<div class="user-posts">
-<% @user.recent_posts.each do |post| %>
-  <div class="comment_col">
-      <h2><%= link_to post.title, user_post_path(@user) %></h2>
-      <p><%= post.text %></p>
-      <h3>Comment <%= post.comments.count%>,  <span>Likes <%= post.likes.count%></span></h3>
-  </div>
-<%end%>
-<% end %>
-<button class="button"><span><%= link_to "All posts", user_posts_path(@user) %> </span></button>
 </div>
-</div>
+ <%= render 'recent_posts'%>
+

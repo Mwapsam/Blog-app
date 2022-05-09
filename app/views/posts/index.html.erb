@@ -1,30 +1,21 @@
+<%= render 'users/navbar'%>
 <div class="posts">
     <div class="user">
       <a class="link-to-user" href="/users/<%= @user.id %>"><%= @user.name %></a>
       <h4 class="posts-count">Posts(<%= @user.posts.size %>)</h4>
         <% if @user && @user.id == @user.id%>
-     <%= link_to "New post", new_user_post_path(@user.id) %>
+        <%= link_to "New post", new_user_post_path(@user.id) %>
+        <%= link_to "All Users", root_path, class: "all-users-link" %>
     <% end %>
     </div>
-    <div class="carousel">
-        <%= image_tag("profile-placeholder.png", :alt => "User icon", class: "placeholder") %>
-    </div>
 </div>
- 
-<div class="card"> 
-    <div class="card-body">
-    <% @posts.each do |post| %>
-            <li><%= link_to post.title, {:action => 'show', :id => post.id}%></li>
-            <p><%= post.text %></p>
-            <h3>Comment <%= post.comments.count%>,  <span>Likes <%= post.likes.count%></span></h3>
-            <div class="comments">
-            <% post.recent_comments.each do |comment| %>
-                <div class="comment">
-                    <p><%= comment.text %></p>
-                </div>
-            <% end %>
-             </div>
-        <% end %>
-        </div> 
-           <%= link_to "All Users", root_path, class: "all-users-link" %>
-</div>
+<%= render "list" %>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>

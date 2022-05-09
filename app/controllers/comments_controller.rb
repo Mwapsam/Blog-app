@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
