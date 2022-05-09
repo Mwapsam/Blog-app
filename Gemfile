@@ -19,6 +19,8 @@ gem 'ffi'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
+gem 'will_paginate', '~> 3.3'
+
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
@@ -82,3 +84,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'tailwindcss-rails', '~> 2.0'

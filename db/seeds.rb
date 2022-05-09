@@ -1,8 +1,23 @@
-# frozen_string_literal: true
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+User.create(name: 'Teddy', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Mexico.')
+User.create(name: 'Lilly', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Poland.')
+User.create(name: 'John', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from USA.')
+User.create(name: 'Sara', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Canada.')
+User.create(name: 'Jane', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from France.')
+User.create(name: 'Jack', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Germany.')
+User.create(name: 'Jill', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Italy.')
+User.create(name: 'Juan', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Spain.')
+User.create(name: 'Julia', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Portugal.')
+User.create(name: 'Jenny', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Mexico.')
+User.create(name: 'Jill', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Poland.')
+User.create(name: 'John', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from USA.')
+User.create(name: 'Emma', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Canada.')
+User.create(name: 'Ella', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from France.')
+User.create(name: 'Evan', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Germany.')
+User.create(name: 'Eve', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Italy.')
+User.create(name: 'Sam', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Spain.')
+User.create(name: 'Sandra', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Portugal.')
+User.create(name: 'Samantha', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Mexico.')
+User.create(name: 'Martin', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Poland.')
+User.create(name: 'Marian', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from USA.')
+User.create(name: 'Mariana', photo: './app/assets/images/profile-placeholder.png', bio: 'Teacher from Canada.')
+

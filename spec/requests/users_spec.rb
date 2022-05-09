@@ -1,23 +1,26 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :request do
-  describe 'GET /index' do
-    it 'returns index page' do
-      get '/users/'
-      expect(response).to have_http_status(:success)
-      expect(response).to render_template(:index)
-      expect(response.body).to include('Here is list of users')
+RSpec.describe User, type: :model do
+  describe 'validations for User model' do
+    before(:each) do
+      @user = User.new(name: 'John')
     end
-  end
 
-  describe 'GET /show' do
-    it 'returns show page' do
-      get '/users/1'
-      expect(response).to have_http_status(:success)
-      expect(response).to render_template(:show)
-      expect(response.body).to include('Here is info about user')
+    before { @user.save }
+
+    it 'if there is name' do
+      @user.name = nil
+      expect(@user).to_not be_valid
+    end
+
+    it 'PostsCounter must be greater than or equal to zero' do
+      @user.posts_counter = -1
+      expect(@user).to_not be_valid
+    end
+
+    it 'PostsCounter must be greater than or equal to zero' do
+      @user.posts_counter = 7
+      expect(@user).to be_valid
     end
   end
 end

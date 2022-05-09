@@ -1,23 +1,42 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe 'Posts', type: :request do
-  describe 'GET /index' do
-    it 'returns http success' do
-      get '/users/1/posts'
-      expect(response).to have_http_status(:success)
-      expect(response).to render_template(:index)
-      expect(response.body).to include('Here is list of posts')
+RSpec.describe Post, type: :model do
+  describe 'For the Post model' do
+    before(:each) do
+      @user = User.new(name: 'John', bio: 'Teacher from Dubai', posts_counter: 0)
+      @post = Post.new(author: @user, title: 'Test', text: 'testing', likes_counter: 7, comments_counter: 5)
     end
 
-    describe 'GET /show' do
-      it 'returns show page' do
-        get '/users/1/posts/1'
-        expect(response).to have_http_status(:success)
-        expect(response).to render_template(:show)
-        expect(response.body).to include('Here is list of all posts for one user')
-      end
+    before { @post.save }
+
+    it 'if there is title' do
+      @post.title = true
+      expect(@post).to be_valid
+    end
+
+    it 'if there is max 250 characters' do
+      @post.title = 'Testing'
+      expect(@post).to be_valid
+    end
+
+    it 'if likes counter is integer' do
+      @post.likes_counter = 5
+      expect(@post).to be_valid
+    end
+
+    it 'if likes counter greater than or equal to zero' do
+      @post.likes_counter = -9
+      expect(@post).to_not be_valid
+    end
+
+    it 'if comments counter greater than or equal to zero.' do
+      @post.comments_counter = -5
+      expect(@post).to_not be_valid
+    end
+
+    it 'if comments counter is integer' do
+      @post.comments_counter = 8
+      expect(@post).to be_valid
     end
   end
 end

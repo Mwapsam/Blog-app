@@ -1,0 +1,11 @@
+<%= form_with model:[@post, @post.comments.new], method: :post, local: true do |f| %>
+  <div class="form-group">
+  <div class="form">
+    <%= f.label :text, "Comment", class: "control-label" %>
+  <div class="col-75">
+    <%= f.text_area :text, size: "50x3", :placeholder => "Type your comment...", required: true%>
+  </div>
+  <%= f.submit "Submit", class: "btn-comment", data: {disable_with: "Loading..."} %>
+  </div>
+<% end %>
+</div>

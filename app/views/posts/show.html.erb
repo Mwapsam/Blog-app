@@ -1,1 +1,27 @@
-<h1>Here is list of all posts for one user</h1>
+<div class="show-post">
+<%= link_to 'All Posts', {:action => 'index'}, class: 'btn-primary'%>
+<div class="post-details">
+<h1 class="post-title"><%= @post.title %></h1>
+   <%= image_tag("post-placeholder.png", :alt => "User icon") %>
+   <p><%= @post.text %></p>
+   <div class="likes">
+      <strong>Likes: </strong><%= @post.likes.count %><br />
+      <strong>Comments: </strong><%= @post.comments.count %><br />
+   </div>
+</p>
+
+<%= form_with model:[@post, @post.likes.new] do |f|%>
+      <%= f.submit "Like" , data: {disable_with: "Loading..."}, class: "likes-btn" %>
+<%end%>
+</div>
+
+<%= render "comments/create" %>
+<h4 class="comments-title">Comments</h4>
+<div class="comments-list">
+   <% @post.comments.each do |comment| %>
+   <div class="comment">
+      <p><%= comment.text %></p>
+   </div>
+   <% end %>
+</div>
+</div>
