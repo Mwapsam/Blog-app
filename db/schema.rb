@@ -55,6 +55,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_09_143919) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.integer "failed_attempts", default: 0, null: false
     t.integer "posts_counter", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
