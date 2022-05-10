@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
- 
- @import 'bootstrap-icons/font/bootstrap-icons';
+
+@import 'bootstrap-icons/font/bootstrap-icons';
 
 * {
   box-sizing: border-box;
@@ -23,12 +23,10 @@
 }
 
 body {
-    background: rgb(240, 239, 243);
+  background: rgb(240, 239, 243);
 }
 
 a:-webkit-any-link {
   text-decoration: none;
   cursor: pointer;
 }
-
-
