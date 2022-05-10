@@ -9,6 +9,8 @@ The end result should follow the following data model (this is an Entity Relatio
 
 > ![](./app/assets/images/blog_app_erd.png)
 
+## Live link 
+[Click here](https://magic-bloger.herokuapp.com)
 
 
 ## Built With
