@@ -4,10 +4,10 @@
         <p>There are no users currently in the system.</p>
     <% else %>
     <div class="card">
-    <h5 class="card-header">USERS</h5>
+    <h5 class="card-header text-center">Poeple you may know</h5>
         <% @users.each do |user| %>
         <div class="card-body">
-            <div class="row">
+            <div class="row px-5">
                 <div class="col rounded float-start">
                 <%= image_tag("profile.jpg", :alt => "User icon")%>
                 </div>

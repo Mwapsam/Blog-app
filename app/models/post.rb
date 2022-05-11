@@ -8,6 +8,8 @@ class Post < ApplicationRecord
   validates_numericality_of :comments_counter, only_integer: true, greater_than_or_equal_to: 0
   validates_numericality_of :likes_counter, only_integer: true, greater_than_or_equal_to: 0
 
+  has_rich_text :text
+
   after_save :update_posts_counter
 
   def update_posts_counter

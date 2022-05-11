@@ -31,6 +31,29 @@ class PostsController < ApplicationController
     @post = User.find(params[:user_id]).posts.find(params[:id])
   end
 
+  def edit
+    @post = User.find(params[:user_id]).posts.find(params[:id])
+  end
+
+  def update
+    @post = User.find(params[:user_id]).posts.find(params[:id])
+    if @post.update(post_params)
+      redirect_to user_posts_path(params[:user_id]), notice: 'Post was successfully updated.'
+    else
+      render :edit, alert: 'Error occurred, please try again. Post not updated'
+    end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    user = User.find(post.author_id)
+    user.posts_counter -= 1
+    post.destroy
+    user.save
+    flash[:alert] = 'You have successfully deleted the post!'
+    redirect_to user_posts_path(post.author_id)
+  end
+
   private
 
   def post_params

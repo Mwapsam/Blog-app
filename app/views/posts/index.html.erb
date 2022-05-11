@@ -4,7 +4,7 @@
       <a class="link-to-user" href="/users/<%= @user.id %>"><%= @user.name %></a>
       <h4 class="posts-count">Posts(<%= @user.posts.size %>)</h4>
         <% if @user && @user.id == @user.id%>
-        <%= link_to "New post", new_user_post_path(@user.id) %>
+        <%= link_to "New post", new_user_post_path(@user.id)%>
         <%= link_to "All Users", root_path, class: "all-users-link" %>
     <% end %>
     </div>

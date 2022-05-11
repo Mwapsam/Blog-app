@@ -1,0 +1,13 @@
+<div class="form-group row-form">
+<%= form_with model: @comment, url: post_comments_path do |f| %>
+ 
+    <%= f.label :text, "Comment", class: "col-sm-2 col-form-label" %>
+    <div class="d-form">
+      <%= f.text_area :text, :class =>"form-control", :placeholder => "Leave a comment here", required: true%>
+    </div>
+  <%= f.submit "Submit", class: "btn-comment", data: {disable_with: "Loading..."} %>
+  <%= f.hidden_field :post_id, value: @post %>
+<% end %>
+</div>
+
+ 

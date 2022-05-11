@@ -1,8 +1,8 @@
 <%= render 'users/navbar'%>
-<%= link_to 'All Posts', {:action => 'index'}, class: 'btn-primary'%>
 <div class="card mb-3 p-4">
   <div class="card-body">
     <h5 class="card-title py-5 text-center fs-4"><%= @post.title %></h5>
+    <title>By <%= @user %></title>
     <p class="card-text"><%= @post.text %></p>
     <p class="card-text"><small class="text-muted">Posted <%= time_ago_in_words(@post.created_at)%> ago</small></p>
     <div class="likes">
@@ -11,17 +11,30 @@
       <%end%>
       <strong>Likes: </strong><%= @post.likes.count %><br />
       <strong>Comments: </strong><%= @post.comments.count %><br />
+      <strong><%= link_to "Add comment", new_post_comment_path(user_id: @post.author_id, post_id: @post.id ) %></strong><br />
+      <%= button_to "Delete Post", user_post_path(user_id: @post.author_id, post_id: @post.id), method: :delete, class: 'btn btn-danger' if can? :destroy, @post %>
    </div>
   </div>
 </div>
 </div>
 
-<%= render "comments/create" %>
-<h4 class="comments-title">Comments</h4>
-<div class="comments-list">
-   <% @post.comments.each do |comment| %>
-   <div class="comment">
-      <p><%= comment.text %></p>
-   </div>
+<% if @post.comments.blank? %>
+<p class="text-center">There are no comments currently available.</p>
+<% else %>
+<div class="card border-success p-5 " >
+  <div class="card-header bg-transparent border-success text-center">Comments</div>
+  <div class="card-body">
+  <% @post.comments.includes(:author).each do |comment| %>
+    <div class="show-comment">
+    <h4>
+    <%= image_tag("profile.jpg", :alt => "User icon", :class => "avatar")%>
+    <%= comment.author.name %>
+    <%= button_to "Delete", post_comment_path(author_id: comment.author_id, post_id: comment.post_id,  id: comment.id), method: :delete, class: 'btn btn-danger btn-sm show-btn' if can? :destroy, comment %>
+    </h4>
+    <p class="card-text"><%= comment.text %></p>
+    <p class="card-text"><small class="text-muted">Posted <%= time_ago_in_words(comment.created_at)%> ago</small></p>
    <% end %>
+   </div>
+  </div>
 </div>
+<% end %>
