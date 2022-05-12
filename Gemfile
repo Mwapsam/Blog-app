@@ -15,6 +15,13 @@ gem 'sprockets-rails'
 # gem "sqlite3", "~> 1.4"
 gem 'pg'
 
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-sass', '~> 4.7.0'
+
+gem 'cancancan'
+gem 'devise'
+gem 'sass-rails'
+
 gem 'ffi'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -59,7 +66,7 @@ gem 'rails-controller-testing'
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

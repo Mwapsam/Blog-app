@@ -1,16 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-body {
-  background: rgb(240, 239, 243);
-  margin: 20px;
-  display: flex;
-}
-
 .users {
   background: #fff;
   border-radius: 15px;
@@ -37,8 +24,8 @@ body {
 }
 
 img {
-  width: 90px;
-  height: 90px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -98,7 +85,7 @@ a {
 h3,
 span {
   font-size: 15px;
-  text-align: center;
+  text-align: start;
 }
 
 .button:hover span {
@@ -127,6 +114,7 @@ span {
   box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
+  margin: 20px;
 }
 
 .posts a {
@@ -138,9 +126,10 @@ span {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
   background-color: aliceblue;
   padding: 20px;
+  margin: 20px;
   border: solid 1px #d2d2d2;
 }
 
@@ -159,24 +148,19 @@ span {
   background-color: azure;
 }
 
-.card-body {
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
-  background-color: aliceblue;
-  border: solid 1px #d2d2d2;
-  margin-top: 20px;
-}
-
 .comments {
   font-size: 12px;
 }
 
+.comment p {
+  margin-left: 20px;
+}
+
 .card {
   display: flex;
-  gap: 0.5em;
-  flex-direction: column;
-  margin-top: 25px;
+
+  /* gap: 0.5em; */
+  margin: 25px 0;
 }
 
 .card li {
@@ -225,6 +209,20 @@ span {
   gap: 20px;
 }
 
+.row {
+  border-top: 1px solid #a1a1a1;
+  padding-top: 10px;
+}
+
+.row-form {
+  margin: 20%;
+}
+
+.show-btn {
+  float: right;
+  margin-right: 50px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -254,11 +252,18 @@ span {
 }
 
 .comment {
-  padding: 20px;
-  background-color: aliceblue;
-  border: solid 1px #d2d2d2;
-  border-radius: 15px;
-  margin-top: 20px;
+  border-top: 1px solid #a1a1a1;
+  max-width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
 }
 
 .likes-btn {
@@ -329,4 +334,15 @@ textarea {
   height: 100%;
   background-color: #f6f4f4;
   margin-bottom: 25px;
+}
+
+.rounded img {
+  border-radius: 50%;
+  height: 98px;
+  width: 98px;
+}
+
+.card-header h2 {
+  color: #000;
+  font-size: 18px;
 }

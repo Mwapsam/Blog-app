@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: rgb(240, 239, 243);
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  cursor: pointer;
+}

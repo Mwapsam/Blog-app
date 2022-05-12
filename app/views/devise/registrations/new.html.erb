@@ -1,0 +1,67 @@
+<!-- Section: Design Block -->
+<section class="">
+  <!-- Jumbotron -->
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="my-5 display-3 fw-bold ls-tight">
+            Register to Catch up with Trends<br />
+          </h1>
+          <p style="color: hsl(217, 10%, 50.8%)">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+            quibusdam tempora at cupiditate quis eum maiores libero
+            veritatis? Dicta facilis sint aliquid ipsum atque?
+          </p>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <form>
+                <div class="form-outline mb-4">
+                  <%= f.label :email, class: "form-label" %><br />
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"%>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <%= f.label :name, class: "form-label"%><br />
+                    <%= f.text_field :name, autocomplete: "name", class: "form-control"%>
+                </div>
+                
+                <div class="form-outline mb-4">
+                      <%= f.label :password, class: "form-label"%>
+                      <% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> characters minimum)</em>
+                      <% end %><br />
+                      <%= f.password_field :password, autocomplete: "new-password", class: "form-control"%>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <%= f.label :password_confirmation, class: "form-label"%><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"%>
+                </div>
+                
+                <%= f.submit "Sign up", class: "btn btn-primary btn-block mb-4"%>
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <%= render "devise/shared/links" %>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->

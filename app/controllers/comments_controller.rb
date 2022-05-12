@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
@@ -14,6 +12,14 @@ class CommentsController < ApplicationController
     else
       render :new, alert: 'Error occured!'
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @post.decrement!(:comments_counter)
+    @comment.destroy!
+    redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", notice: 'Success!'
   end
 
   private

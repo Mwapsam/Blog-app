@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'validations for User model' do
     before(:each) do
-      @user = User.new(name: 'John')
+      @user = User.create(name: 'Mwape', email: 'test@gmail', password: 'test123')
     end
 
     before { @user.save }
 
     it 'if there is name' do
-      @user.name = nil
+      @user.email = nil
       expect(@user).to_not be_valid
     end
 
@@ -24,17 +24,15 @@ RSpec.describe User, type: :model do
     end
 
     it 'should return recent comments' do
-      user = User.create(name: 'John', bio: 'Teacher from Dubai', posts_counter: 0)
-      Post.create(author: user, title: 'Test', text: 'testing', likes_counter: 7, comments_counter: 5)
-      expect(user.recent_posts.first.title).to eq('Test')
+      Post.create(author: @user, title: 'Test', text: 'testing', likes_counter: 7, comments_counter: 5)
+      expect(@user.recent_posts.first.text).to eq('testing')
     end
 
     it 'should return recent comments' do
-      user = User.create(name: 'John', bio: 'Teacher from Dubai', posts_counter: 0)
-      Post.create(author: user, title: 'Test', text: 'testing', likes_counter: 7, comments_counter: 5)
-      Post.create(author: user, title: 'Test1', text: 'testing1', likes_counter: 7, comments_counter: 5)
-      Post.create(author: user, title: 'Test2', text: 'testing2', likes_counter: 7, comments_counter: 5)
-      expect(user.recent_posts.length).to eq(3)
+      Post.create(author: @user, title: 'Test', text: 'testing', likes_counter: 7, comments_counter: 5)
+      Post.create(author: @user, title: 'Test1', text: 'testing1', likes_counter: 7, comments_counter: 5)
+      Post.create(author: @user, title: 'Test2', text: 'testing2', likes_counter: 7, comments_counter: 5)
+      expect(@user.recent_posts.length).to eq(3)
     end
   end
 end
