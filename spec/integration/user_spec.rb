@@ -5,6 +5,12 @@ RSpec.feature 'Hello world', type: :feature do
     @user1 = User.create(name: 'John', photo: 'somephoto', bio: 'Teacher from Mexico.', email: 'john@gmail.com',
                          password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
 
+    @user1 = User.create(name: 'James', photo: 'somephoto', bio: 'Teacher from Mexico.', email: 'james@gmail.com',
+                            password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
+
+    @user1 = User.create(name: 'Jack', photo: 'somephoto', bio: 'Teacher from Mexico.', email: 'jack@gmail.com',
+                                password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')                        
+
     visit user_session_path
 
     within 'form' do
@@ -16,6 +22,10 @@ RSpec.feature 'Hello world', type: :feature do
   end
 
   background { visit root_path }
+  scenario 'shows the right content' do
+    expect(page).to have_content('John')
+  end
+
   scenario 'shows the right content' do
     expect(page).to have_content('John')
   end
