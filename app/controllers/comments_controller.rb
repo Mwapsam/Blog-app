@@ -22,8 +22,6 @@ class CommentsController < ApplicationController
     redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", notice: 'Success!'
   end
 
-
-
   private
 
   def comment_params

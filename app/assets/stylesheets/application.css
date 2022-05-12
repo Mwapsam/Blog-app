@@ -14,8 +14,6 @@
  *= require_self
  */
 
-@import 'bootstrap-icons/font/bootstrap-icons';
-
 * {
   box-sizing: border-box;
   padding: 0;
