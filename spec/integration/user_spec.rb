@@ -17,6 +17,6 @@ RSpec.feature 'Hello world', type: :feature do
 
   background { visit root_path }
   scenario 'shows the right content' do
-    expect(page).to have_content('Poeple you may know')
+    expect(page).to have_content('John')
   end
 end
