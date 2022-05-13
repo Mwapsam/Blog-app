@@ -34,7 +34,7 @@ before(:each) do
         expect(page.first('img')['src']).to have_content '/assets/profile-placeholder-15235acc91950fc6e35d44cd5337db6ca48c73d53e4aa0f7f8dec750ad5242ce.png'
     end
 
-    scenario "I can see the number of posts the user has written" do
+    scenario "If the user can see the number of posts written" do
         expect(page).to have_content('Wrote 3 posts')
     end
 
