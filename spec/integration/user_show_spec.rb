@@ -38,4 +38,18 @@ before(:each) do
         expect(page).to have_content('Wrote 3 posts')
     end
 
+    scenario "I can see the user's bio" do
+        expect(page).to have_content('Teacher from Mexico.')
+    end
+
+    scenario "I can see the user's posts" do
+        expect(page).to have_content('Command on Windows')
+        expect(page).to have_content('Command on Linux')
+        expect(page).to have_content('Command on Mac')
+    end
+
+    scenario "I can see a button that lets me view all of a user's posts" do
+        click_link('All posts')
+        expect(current_path).to eq user_posts_path(@first)
+    end
 end
