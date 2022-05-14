@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable,
-  :confirmable, :trackable, :jwt_authenticatable, jwt_revocation_strategy: JwtDenylist
+         :recoverable, :rememberable, :validatable,
+         :confirmable, :trackable, :jwt_authenticatable, jwt_revocation_strategy: JwtDenylist
 
   has_many :comments, foreign_key: 'author_id', dependent: :destroy
   has_many :posts, foreign_key: 'author_id', dependent: :destroy

@@ -6,10 +6,10 @@ RSpec.feature 'Hello world', type: :feature do
                          password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
 
     @user1 = User.create(name: 'James', photo: 'somephoto', bio: 'Teacher from Mexico.', email: 'james@gmail.com',
-                            password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
+                         password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
 
     @user1 = User.create(name: 'Jack', photo: 'somephoto', bio: 'Teacher from Mexico.', email: 'jack@gmail.com',
-                                password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')                        
+                         password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
 
     visit user_session_path
 
