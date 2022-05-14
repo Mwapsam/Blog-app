@@ -56,7 +56,7 @@ development:
 
 test:
   <<: *default
-  database: test_db
+  database: blog-rails
   username: postgres
   password: root
 
