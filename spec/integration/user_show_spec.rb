@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.feature 'Testing user show page', type: :feature do
 before(:each) do
     @first = User.create(name: 'John', photo: 'profile.jpg', bio: 'Teacher from Mexico.', email: 'john@gmail.com',
-                         password: 'johnsecret', confirmed_at: Time.now, posts_counter: 3, role: 'admin')
+                         password: 'johnsecret', confirmed_at: Time.now, posts_counter: 3, role: 'admin').save
 
     Post.create(title: 'Command on Windows', text: 'How to add, commit and push to git',
-                        author_id: @first, created_at: Time.now, updated_at: Time.now)
+                        author_id: @first, created_at: Time.now, updated_at: Time.now).save
     
     Post.create(title: 'Command on Linux', text: 'How to add, commit and push to git',
                         author_id: @first, created_at: Time.now, updated_at: Time.now)
@@ -24,7 +24,7 @@ before(:each) do
     click_button 'Log in'
   end
 
-    background { visit user_path(@first.id) }
+    background { visit user_path(1) }
 
     scenario "I can see the user's username" do
         expect(page).to have_content('John')
