@@ -6,18 +6,18 @@ RSpec.feature 'Testing user index page', type: :feature do
                          password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
 
     @second = User.create(name: 'James', photo: 'profile.jpg', bio: 'Teacher from Mexico.', email: 'james@gmail.com',
-                         password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
+                          password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
 
     @third = User.create(name: 'Jack', photo: 'profile.jpg', bio: 'Teacher from Mexico.', email: 'jack@gmail.com',
                          password: 'johnsecret', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
 
     Post.create
-    
+
     Post.create(title: 'Command on Linux', text: 'How to add, commit and push to git',
-                        author_id: @first.id, created_at: Time.now, updated_at: Time.now)
+                author_id: @first.id, created_at: Time.now, updated_at: Time.now)
 
     Post.create(title: 'Command on Mac', text: 'How to add, commit and push to git',
-                        author_id: @second.id, created_at: Time.now, updated_at: Time.now)
+                author_id: @second.id, created_at: Time.now, updated_at: Time.now)
 
     visit user_session_path
 
