@@ -81,5 +81,10 @@ RSpec.feature 'Posts show page', type: :feature do
     scenario "I can see the post comments counter." do
       expect(page).to have_content 'Comments 2'
     end
+
+    scenario "I can see the post comments." do  
+      expect(page).to have_content 'My first comment'
+      expect(page).to have_content 'My second comment'
+    end
   end
 end
