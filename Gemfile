@@ -22,6 +22,12 @@ gem 'cancancan'
 gem 'devise'
 gem 'sass-rails'
 
+gem 'rack-cors'
+
+gem 'devise-jwt'
+
+gem 'dotenv-rails', groups: %i[development test]
+
 gem 'ffi'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
