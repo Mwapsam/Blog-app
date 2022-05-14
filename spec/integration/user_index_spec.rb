@@ -47,6 +47,6 @@ RSpec.feature 'Testing user index page', type: :feature do
 
   scenario "When I click on a user, I am redirected to that user's show page" do
     click_link 'John', match: :first
-    expect(current_path).to eq user_path @first
+    expect(current_path).to eq user_path(User.first.id)
   end
 end
