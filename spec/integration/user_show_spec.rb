@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.feature 'Testing user show page', type: :feature do
   before(:each) do
     User.destroy_all
-    @first = User.create(name: 'John', photo: '/assets/profile-placeholder-15235acc91950fc6e35d44cd5337db6ca48c73d53e4aa0f7f8dec750ad5242ce.png', bio: 'Teacher from Mexico', email: 'john@gmail.com',
-      password: 'johnsecret', confirmed_at: Time.now, role: 'admin',  posts_counter: 0)
+    @first = User.create(name: 'John', photo: '/assets/profile-placeholder-15235acc91950fc6e35d44cd5337db6ca48c73d53e4aa0f7f8dec750ad5242ce.png',
+                         bio: 'Teacher from Mexico', email: 'john@gmail.com', password: 'johnsecret', confirmed_at: Time.now, role: 'admin', posts_counter: 0)
 
-      Post.create(title: 'Command on Windows', text: 'My text', author_id: @first.id, likes_counter: 0, comments_counter: 0)
-      Post.create(title: 'Command on Linux', text: 'My text', author_id: @first.id, likes_counter: 0, comments_counter: 0)
-      Post.create(title: 'Command on Mac', text: 'My text', author_id: @first.id, likes_counter: 0, comments_counter: 0)
+    Post.create(title: 'Command on Windows', text: 'My text', author_id: @first.id, likes_counter: 0, comments_counter: 0)
+    Post.create(title: 'Command on Linux', text: 'My text', author_id: @first.id, likes_counter: 0, comments_counter: 0)
+    Post.create(title: 'Command on Mac', text: 'My text', author_id: @first.id, likes_counter: 0, comments_counter: 0)
 
     visit user_session_path
 
