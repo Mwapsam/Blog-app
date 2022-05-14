@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_10_230138) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_14_074108) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_10_230138) do
     t.bigint "post_id"
     t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
+  end
+
+  create_table "jwt_denylist", force: :cascade do |t|
+    t.string "jti", null: false
+    t.datetime "exp", null: false
+    t.index ["jti"], name: "index_jwt_denylist_on_jti"
   end
 
   create_table "likes", force: :cascade do |t|

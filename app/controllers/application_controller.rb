@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-class ApplicationController < ActionController::Base
-  protect_from_forgery prepend: true
+class ApplicationController < ActionController::API
   before_action :authenticate_user!
-
+  before_action :authorized, only: [:auto_login]
   before_action :update_allowed_parameters, if: :devise_controller?
 
   protected
